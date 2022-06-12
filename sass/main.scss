@@ -61,6 +61,57 @@ body {
     }
   }
 }
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  transform: translateX(100%);
+  height: 100vh;
+  width: 100%;
+  background-image: $blue-gradient-solid;
+  z-index: 100;
+  transition: 0.5s cubic-bezier(0.065, 0.05, 0.036, 1);
+  &--active {
+    transform: translateX(0%);
+  }
+  &__item {
+    position: relative;
+    display: block;
+    color: $pure-white;
+    margin: 0.5em;
+    padding: 0.5em 2em;
+    font-size: 2.8rem;
+    text-decoration: none;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-color: $pure-white;
+      transform: scaleY(0);
+      transition: transform 0.3s;
+    }
+    &:hover::before {
+      transform: scaleY(1);
+    }
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s;
+  animation-delay: 0.3s;
+}
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 // HEADER
 .header {
   position: relative;
@@ -97,9 +148,63 @@ body {
     }
   }
 }
+// MAIN
+// DREAMS
+.dreams {
+  &__box {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+  }
+  &__img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  &__title {
+    margin-bottom: 0.5em;
+  }
+  &__text {
+    font-size: 1.4rem;
+  }
+}
 // ===================
 // MEDIA
 // ===================
+@media (min-width: 576px) {
+  .nav {
+    justify-content: flex-start;
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.5);
+    &--active {
+      transform: translateX(80%);
+    }
+    &-items {
+      padding: 30px;
+    }
+  }
+  .dreams {
+    &__box {
+      flex-direction: row;
+      justify-content: space-between;
+      &-text {
+        width: 55%;
+        &--right {
+          text-align: right;
+        }
+      }
+      &-img {
+        width: 40%;
+        &--right {
+          order: 1;
+        }
+      }
+    }
+    &__img {
+      margin-bottom: 0;
+      max-height: 300px;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .white-block {
     height: 40px;
@@ -116,6 +221,11 @@ body {
       font-size: 1.6rem;
     }
   }
+  .dreams {
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -126,6 +236,29 @@ body {
     background-image: $blue-gradient, url(../img/palmbig.jpg);
     &__heading {
       font-size: 10rem;
+    }
+    .nav {
+      &__item {
+        font-size: 4.8rem;
+      }
+    }
+    .dreams {
+      &__box {
+        margin: 5em 0;
+        &-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          margin-bottom: 2.5em;
+        }
+      }
+      &__title {
+        font-size: 3.6rem;
+
+      }
+      &__text {
+        font-size: 2.2rem;
+      }
     }
   }
 }
