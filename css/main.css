@@ -448,12 +448,15 @@ body {
   opacity: 0;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
 }
 
 .islands__card-info-title {
   position: absolute;
+  width: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -480,6 +483,7 @@ body {
 
 .islands__card-info-btn {
   position: absolute;
+  width: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -490,6 +494,10 @@ body {
   border: none;
   background-color: #00ffaa;
   cursor: pointer;
+}
+
+.islands__card-info-btn::before {
+  background-color: #0fe29c;
 }
 
 @media (min-width: 576px) {
@@ -564,6 +572,20 @@ body {
   .hero-img__text {
     font-size: 2.2rem;
   }
+  .islands__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .islands__card {
+    margin: 1em;
+    width: 45%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -604,12 +626,20 @@ body {
   }
   .hero-img {
     padding: 25rem 2em;
+    background-size: cover;
+    background-position: center;
   }
   .hero-img__title {
     font-size: 7.2rem;
   }
   .hero-img hr {
     width: 60%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .islands__card {
+    width: 30%;
   }
 }
 /*# sourceMappingURL=main.css.map */
