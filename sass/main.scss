@@ -167,6 +167,23 @@ body {
     font-size: 1.4rem;
   }
 }
+// HEROIMG
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  @include heroImages('../img/hd-wallpaper-gfc41cf4fe_1920.jpg');
+  text-align: center;
+  color: $pure-white;
+  overflow: hidden;
+  &__title {
+    font-family:'Dancing Script', cursive;
+    margin-bottom: 0.5em;
+    font-size: 4.8rem;
+  }
+  &__text {
+    padding: 1em 0;
+  }
+}
 // ===================
 // MEDIA
 // ===================
@@ -226,6 +243,17 @@ body {
       font-size: 1.8rem;
     }
   }
+  .hero-img {
+    padding: 30rem 2em;
+    hr {
+      width: 70%;
+      margin: 0 auto;
+      color: #fff;
+    }
+    &__text {
+      font-size: 2.2rem;
+    }
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -254,11 +282,19 @@ body {
       }
       &__title {
         font-size: 3.6rem;
-
       }
       &__text {
         font-size: 2.2rem;
       }
+    }
+  }
+  .hero-img {
+    padding: 25rem 2em;
+    &__title {
+      font-size: 7.2rem;
+    }
+    hr {
+      width: 60%;
     }
   }
 }
