@@ -339,6 +339,8 @@ body {
   color: #fff;
   overflow: hidden;
   background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
 }
 
 .hero-img__title {
@@ -349,6 +351,10 @@ body {
 
 .hero-img__text {
   padding: 1em 0;
+}
+
+.islands {
+  margin-top: 5em;
 }
 
 .islands-cards {
@@ -500,7 +506,151 @@ body {
   background-color: #0fe29c;
 }
 
+.offers {
+  position: relative;
+  background-image: radial-gradient(circle at top right, #004eff 0%, #00d4ff 100%);
+  overflow: hidden;
+  margin-top: 5em;
+  background-attachment: scroll;
+}
+
+.offers .section-heading {
+  color: #fff;
+}
+
+.offers__option {
+  margin: 1em 0;
+  -webkit-box-shadow: 5px 5px 10px #2e2e2e2e;
+          box-shadow: 5px 5px 10px #2e2e2e2e;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.offers__option-img {
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.offers__option-img:hover {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+.offers__option-info {
+  padding: 2em;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.offers__option-heading {
+  margin-bottom: 0.5em;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.offers__option-text {
+  margin-bottom: 0.5em;
+  font-size: 1.3rem;
+  color: #2e2e2e;
+}
+
+.offers__option-btn {
+  margin-top: 1em;
+  padding: 1em;
+  width: 100%;
+  color: #fff;
+  background-color: #1755e7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.offers__option-btn::before {
+  background-color: #164dcc;
+}
+
+.reviews__box {
+  position: relative;
+  margin: 2em;
+  padding: 2em;
+  border-radius: 8px;
+  -webkit-box-shadow: 3px 3px 10px #2e2e2e2e;
+          box-shadow: 3px 3px 10px #2e2e2e2e;
+}
+
+.reviews__box-info {
+  padding: 2em;
+  margin: 10em 0;
+}
+
+.reviews__box-img {
+  position: absolute;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.reviews__box-img img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+.reviews__box-text {
+  margin: 2em 0;
+}
+
 @media (min-width: 576px) {
+  .hero-img {
+    background-attachment: fixed;
+  }
+  .offers {
+    background-attachment: fixed;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/trees-gaaa4b3a91_1920.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .offers__option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2em 0;
+    width: 100%;
+  }
+  .offers__option-img {
+    width: 50%;
+    height: auto;
+  }
+  .offers__option-img--right {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .offers__option-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .offers__option-heading {
+    margin-bottom: 0.5em;
+    font-size: 3.6rem;
+  }
+  .offers__option-btn {
+    padding: 1em;
+  }
   .nav {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -594,7 +744,7 @@ body {
     right: 50px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/palmbig.jpg);
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/palmbig.jpg");
   }
   .header__heading {
     font-size: 10rem;
@@ -634,6 +784,17 @@ body {
   }
   .hero-img hr {
     width: 60%;
+  }
+  .offers__option-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 300px;
+  }
+  .offers__option-text {
+    font-size: 1.5rem;
+  }
+  .offers__option-info {
+    padding: 2em 3em;
   }
 }
 

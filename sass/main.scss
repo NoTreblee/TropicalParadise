@@ -176,6 +176,8 @@ body {
   color: $pure-white;
   overflow: hidden;
   background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
   &__title {
     font-family: 'Dancing Script', cursive;
     margin-bottom: 0.5em;
@@ -187,6 +189,7 @@ body {
 }
 // ISLANDS
 .islands {
+  margin-top: 5em;
   &-cards {
     display: flex;
     justify-content: space-evenly;
@@ -257,7 +260,7 @@ body {
       transform: rotateY(180deg);
       transition: transform 1s, opacity 1s;
       &-title {
-        @include islandCardStyles
+        @include islandCardStyles;
         top: 1.2em;
         font-family: 'Dancing Script', cursive;
         font-size: 2.8rem;
@@ -276,7 +279,7 @@ body {
         }
       }
       &-btn {
-        @include islandCardStyles
+        @include islandCardStyles;
         bottom: 2em;
         padding: 1em;
         border-radius: 8px;
@@ -291,10 +294,122 @@ body {
     }
   }
 }
+
+// Offers
+.offers {
+  position: relative;
+  background-image: $light-blue-gradient-solid;
+  overflow: hidden;
+  margin-top: 5em;
+  background-attachment: scroll;
+  .section-heading {
+    color: $pure-white;
+  }
+  &__option {
+    margin: 1em 0;
+    box-shadow: 5px 5px 10px #2e2e2e2e;
+    background-color: $pure-white;
+    overflow: hidden;
+    &-img {
+      width: 100%;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+    &-info {
+      padding: 2em;
+      background-color: $pure-white;
+      z-index: 10;
+    }
+    &-heading {
+      margin-bottom: 0.5em;
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+    &-text {
+      margin-bottom: 0.5em;
+      font-size: 1.3rem;
+      color: $dark;
+    }
+    &-btn {
+      margin-top: 1em;
+      padding: 1em;
+      width: 100%;
+      color: $pure-white;
+      background-color: $main-color;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      &::before {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+.reviews {
+  &__box {
+    position: relative;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px #2e2e2e2e;
+    &-info {
+      padding: 2em;
+      margin: 10em 0;
+      
+    }
+    &-img {
+      position: absolute;
+      right: 0;
+      transform: translate(-50%, -50%);
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    &-text {
+      margin: 2em 0;
+    }
+  }
+}
 // ===================
 // MEDIA
 // ===================
 @media (min-width: 576px) {
+  .hero-img {
+    background-attachment: fixed;
+  }
+  .offers {
+    background-attachment: fixed;
+    @include heroImages('../img/trees-gaaa4b3a91_1920.jpg');
+    &__option {
+      display: flex;
+      margin: 2em 0;
+      width: 100%;
+      &-img {
+        width: 50%;
+        height: auto;
+        &--right {
+          order: 1;
+        }
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      &-heading {
+        margin-bottom: 0.5em;
+        font-size: 3.6rem;
+      }
+      &-btn {
+        padding: 1em;
+      }
+    }
+  }
   .nav {
     justify-content: flex-start;
     box-shadow: -1px 0 5px rgba(0, 0, 0, 0.5);
@@ -379,7 +494,7 @@ body {
     right: 50px;
   }
   .header {
-    background-image: $blue-gradient, url(../img/palmbig.jpg);
+    background-image: $blue-gradient, url('../img/palmbig.jpg');
     &__heading {
       font-size: 10rem;
     }
@@ -415,6 +530,20 @@ body {
     }
     hr {
       width: 60%;
+    }
+  }
+  .offers {
+    &__option {
+      &-img {
+        object-fit: cover;
+        height: 300px;
+      }
+      &-text {
+        font-size: 1.5rem;
+      }
+      &-info {
+        padding: 2em 3em;
+      }
     }
   }
 }
